@@ -21,4 +21,24 @@ return {
       require('colorizer').setup()
     end,
   },
+  {
+    -- Zen mode
+    'folke/zen-mode.nvim',
+    opts = {},
+    config = function()
+      vim.keymap.set('n', '<leader>z', function()
+        require('zen-mode').toggle {}
+      end)
+    end,
+  },
+  {
+    -- Markdown previewer with synced scrolling
+    'iamcco/markdown-preview.nvim',
+    cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
+    build = 'cd app && yarn install',
+    init = function()
+      vim.g.mkdp_filetypes = { 'markdown' }
+    end,
+    ft = { 'markdown' },
+  },
 }

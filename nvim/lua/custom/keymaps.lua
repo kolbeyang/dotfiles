@@ -1,5 +1,9 @@
 local opts = { noremap = true, silent = true }
 
+-- Clear highlights on search when pressing <Esc> in normal mode
+--  See `:help hlsearch`
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
 -- vim.keymap.set({ 'x', 'n' }, '<leader>w', '<cmd>w<cr><esc>', { desc = 'Save file', noremap = true, silent = true })
 vim.keymap.set({ 'x', 'n' }, '<leader>w', function()
   vim.cmd 'write'
@@ -43,6 +47,9 @@ vim.keymap.set('n', '<C-h>', '20h', opts)
 vim.keymap.set('n', '<C-l>', '20l', opts)
 vim.keymap.set('n', '<C-S-h>', '40h', opts)
 vim.keymap.set('n', '<C-S-l>', '40l', opts)
+
+-- Keybinds to make split navigation easier.
+--  Use CTRL+<hjkl> to switch between windows
 
 -- Navigate between splits
 -- vim.keymap.set('n', '<C-k>', ':wincmd k<CR>', opts)
@@ -92,3 +99,11 @@ vim.keymap.set('n', '<leader>d', function()
     vim.diagnostic.goto_next()
   end
 end, { desc = '[D]iagnostics next', noremap = true, silent = true })
+
+-- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
+-- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
+-- is not what someone will guess without a bit more experience.
+--
+-- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
+-- or just use <C-\><C-n> to exit terminal mode
+vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })

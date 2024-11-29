@@ -74,7 +74,7 @@ vim.filetype.add {
   },
 }
 
-require 'custom.keymaps'
+require 'keymaps'
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -646,8 +646,8 @@ require('lazy').setup({
         end)(),
         dependencies = {
           -- `friendly-snippets` contains a variety of premade snippets.
-          --    See the README about individual language/framework/plugin snippets:
-          --    https://github.com/rafamadriz/friendly-snippets
+          -- See the README about individual language/framework/plugin snippets:
+          -- https://github.com/rafamadriz/friendly-snippets
           -- {
           --   'rafamadriz/friendly-snippets',
           --   config = function()
@@ -779,7 +779,7 @@ require('lazy').setup({
     name = 'nord',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
-      local nord_extended = require 'custom/nord-extended'
+      local nord_extended = require 'nord-extended'
       local nord = require('nord.colors').palette
       vim.cmd.colorscheme 'nord'
       vim.api.nvim_set_hl(0, 'NormalFloat', { bg = nord_extended.polar_night.dark }) --
@@ -905,7 +905,7 @@ require('lazy').setup({
   --    This is the easiest way to modularize your config.
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  { import = 'custom.plugins' },
+  { import = 'plugins' },
   -- --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!

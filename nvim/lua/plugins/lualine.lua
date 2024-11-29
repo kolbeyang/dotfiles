@@ -1,5 +1,5 @@
 local c = require('nord.colors').palette
-local nord_extended = require 'custom/nord-extended'
+local nord_extended = require 'nord-extended'
 
 local custom_nord = {}
 

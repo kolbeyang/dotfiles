@@ -43,21 +43,19 @@ vim.keymap.set('n', '<leader>se', '<C-w>=', opts) -- make split windows equal wi
 vim.keymap.set('n', '<leader>xs', ':close<CR>', opts) -- close current split window
 
 -- Quick horizontal navigation
-vim.keymap.set('n', '<C-h>', '20h', opts)
-vim.keymap.set('n', '<C-l>', '20l', opts)
-vim.keymap.set('n', '<C-S-h>', '40h', opts)
-vim.keymap.set('n', '<C-S-l>', '40l', opts)
+-- vim.keymap.set('n', '<C-h>', '20h', opts)
+-- vim.keymap.set('n', '<C-l>', '20l', opts)
+-- vim.keymap.set('n', '<C-S-h>', '40h', opts)
+-- vim.keymap.set('n', '<C-S-l>', '40l', opts)
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 
 -- Navigate between splits
--- vim.keymap.set('n', '<C-k>', ':wincmd k<CR>', opts)
--- vim.keymap.set('n', '<C-j>', ':wincmd j<CR>', opts)
-vim.keymap.set('n', '<leader>nk', ':wincmd k<CR>', opts)
-vim.keymap.set('n', '<leader>nj', ':wincmd j<CR>', opts)
-vim.keymap.set('n', '<leader>nh', ':wincmd h<CR>', opts)
-vim.keymap.set('n', '<leader>nl', ':wincmd l<CR>', opts)
+vim.keymap.set('n', '<C-j>', ':wincmd j<CR>', opts)
+vim.keymap.set('n', '<C-k', ':wincmd k<CR>', opts)
+vim.keymap.set('n', '<C-h>', ':wincmd h<CR>', opts)
+vim.keymap.set('n', '<C-l>', ':wincmd l<CR>', opts)
 
 -- Tabs
 vim.keymap.set('n', '<leader>to', ':tabnew<CR>', opts) -- open new tab

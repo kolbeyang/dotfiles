@@ -67,6 +67,11 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 vim.cmd 'language en_US'
 
+-- Disable newline comment behavior
+vim.api.nvim_create_autocmd('BufWinEnter', {
+  command = 'set formatoptions-=cro',
+})
+
 -- Treat mdx files like md files
 vim.filetype.add {
   extension = {
@@ -284,10 +289,8 @@ require('lazy').setup({
         --   },
         -- },
         -- pickers = {}
-        extensions = {
-          ['ui-select'] = {
-            require('telescope.themes').get_dropdown(),
-          },
+        defaults = {
+          path_display = { 'smart' }, -- This will shorten long paths intelligently
         },
       }
 
@@ -300,7 +303,7 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
       vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
-      -- vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
+      vim.keymap.set('v', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
       vim.keymap.set('n', '<leader>sw', builtin.live_grep, { desc = '[S]earch by grep' })
       vim.keymap.set('n', '<leader>sg', builtin.git_status, { desc = '[S]earch [G]it files' })
       vim.keymap.set('n', '<leader>sc', builtin.git_commits, { desc = '[S]earch [C]ommits' })

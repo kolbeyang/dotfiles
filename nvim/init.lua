@@ -221,6 +221,7 @@ require('lazy').setup({
         { '<leader>s', group = '[S]earch' },
         { '<leader>w', group = '[W]orkspace' },
         { '<leader>t', group = '[T]oggle' },
+        { '<leader>m', group = '[M]arkdown and CSV' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       },
     },
@@ -586,14 +587,14 @@ require('lazy').setup({
     event = { 'BufWritePre' },
     cmd = { 'ConformInfo' },
     keys = {
-      {
-        '<leader>f',
-        function()
-          require('conform').format { async = true, lsp_format = 'fallback' }
-        end,
-        mode = '',
-        desc = '[F]ormat buffer',
-      },
+      -- {
+      --   '<leader>f',
+      --   function()
+      --     require('conform').format { async = true, lsp_format = 'fallback' }
+      --   end,
+      --   mode = '',
+      --   desc = '[F]ormat buffer',
+      -- },
     },
     opts = {
       notify_on_error = false,
@@ -800,6 +801,7 @@ require('lazy').setup({
       local nord = require('nord.colors').palette
       vim.cmd.colorscheme 'nord'
       vim.api.nvim_set_hl(0, 'NormalFloat', { bg = nord_extended.polar_night.dark }) --
+      vim.api.nvim_set_hl(0, 'Float', { bg = nord_extended.polar_night.dark }) --
       vim.api.nvim_set_hl(0, 'FloatBorder', { bg = nord_extended.polar_night.dark, fg = nord_extended.polar_night.dark }) --
       vim.api.nvim_set_hl(0, 'TelescopeNormal', { bg = nord_extended.polar_night.dark }) --
       vim.api.nvim_set_hl(0, 'TelescopeBorder', { bg = nord_extended.polar_night.dark, fg = nord_extended.polar_night.dark }) --

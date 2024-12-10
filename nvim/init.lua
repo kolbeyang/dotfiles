@@ -877,8 +877,6 @@ require('lazy').setup({
         'tsx',
         'lua',
         'luadoc',
-        'markdown',
-        'markdown_inline',
         'query',
         'vim',
         'vimdoc',

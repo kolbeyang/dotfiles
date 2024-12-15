@@ -782,16 +782,15 @@ require('lazy').setup({
     --   vim.cmd.hi 'Comment gui=none'
     -- end,
   },
-  {
-
-    'Yazeed1s/oh-lucy.nvim',
-    name = 'oh-lucy',
-    priority = 1000, -- Make sure to load this before all the other start plugins.
-    -- init = function()
-    --   vim.cmd.colorscheme 'oh-lucy'
-    --   vim.cmd.hi 'Comment gui=none'
-    -- end,
-  },
+  -- {
+  --   'Yazeed1s/oh-lucy.nvim',
+  --   name = 'oh-lucy',
+  --   priority = 1000, -- Make sure to load this before all the other start plugins.
+  --   -- init = function()
+  --   --   vim.cmd.colorscheme 'oh-lucy'
+  --   --   vim.cmd.hi 'Comment gui=none'
+  --   -- end,
+  -- },
   {
     'gbprod/nord.nvim',
     name = 'nord',

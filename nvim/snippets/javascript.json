@@ -1,1 +1,48 @@
-{"component":{"prefix":"component","body":["interface Props {","","}","","const ${1:$TM_FILENAME_BASE} = ({}: Props) => {","  return <div className=\"flex\">","    ${2:hello}","  <\/div>","}","","export default ${1:$TM_FILENAME_BASE};"]},"Console Log":{"prefix":"log","description":"Log output to the console","body":"console.log($1);"},"className":{"prefix":"className","body":"className=\"$0\""},"Arrow Function":{"prefix":"afn","description":"Create an arrow function","body":["const $1 = ($2) => {","  $3","};"]},"<div":{"prefix":"<div","body":["<div className=\"${1}\">","\t$0","<\/div>"]},"useState":{"prefix":"useState","body":"const [ ${1}, set${1\/(.*)\/${1:\/capitalize}\/} ] = useState(${2});"}}
+{
+   "component":{
+      "prefix":"component",
+      "body":[
+         "interface Props {",
+         "",
+         "}",
+         "",
+         "const ${1:$TM_FILENAME_BASE} = ({}: Props) => {",
+         "  return <div className=\"flex\">",
+         "    ${2:hello}",
+         "  <\/div>",
+         "}",
+         "",
+         "export default ${1:$TM_FILENAME_BASE};"
+      ]
+   },
+   "Console Log":{
+      "prefix":"log",
+      "description":"Log output to the console",
+      "body":"console.log($1);"
+   },
+   "className":{
+      "prefix":"className",
+      "body":"className=\"$0\""
+   },
+   "Arrow Function":{
+      "prefix":"afn",
+      "description":"Create an arrow function",
+      "body":[
+         "const $1 = ($2) => {",
+         "  $3",
+         "};"
+      ]
+   },
+   "<div":{
+      "prefix":"<div",
+      "body":[
+         "<div className=\"${1}\">",
+         "\t$0",
+         "<\/div>"
+      ]
+   },
+   "useState":{
+      "prefix":"useState",
+      "body":"const [ ${1}, set${1\/(.*)\/${1:\/capitalize}\/} ] = useState(${2});"
+   }
+}

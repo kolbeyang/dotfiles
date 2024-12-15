@@ -1,1 +1,1 @@
-{"daily":{"prefix":"daily","body":["# $TM_FILENAME_BASE","","## What happened","$0","","## Dump"]}}
+{"daily":{"prefix":"daily","body":["# $TM_FILENAME_BASE","","## What happened","$0","","## Dump"]},"link":{"prefix":"link","body":"[$0]($CLIPBOARD)"}}

@@ -70,10 +70,10 @@ return {
   --   dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
   --   opts = {},
   -- },
-  { -- Change kitty theme
-    'shaun-mathew/Chameleon.nvim',
-    config = function()
-      require('chameleon').setup()
-    end,
-  },
+  -- { -- Change kitty theme
+  --   'shaun-mathew/Chameleon.nvim',
+  --   config = function()
+  --     require('chameleon').setup()
+  --   end,
+  -- },
 }

@@ -28,8 +28,9 @@ return {
           icon = 'x',
           -- Highlight for the checked icon
           highlight = 'RenderMarkdownChecked',
+          scope_highlight = 'Comment',
           -- Highlight for item associated with checked checkbox
-          scope_highlight = nil,
+          -- scope_highlight = nil,
         },
       },
     }

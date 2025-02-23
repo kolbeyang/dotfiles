@@ -1,0 +1,50 @@
+{
+    "global": { "show_in_menu_bar": false },
+    "profiles": [
+        {
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "description": "Switch to dvorak if internal keyboard is being used, otherwise use US.",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "input_sources": [{ "input_source_id": "com.apple.keylayout.Dvorak" }],
+                                        "type": "input_source_if"
+                                    },
+                                    {
+                                        "identifiers": [{ "is_built_in_keyboard": false }],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": { "key_code": "left_command" },
+                                "to": [{ "select_input_source": { "input_source_id": "com.apple.keylayout.US" } }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "input_sources": [{ "input_source_id": "com.apple.keylayout.US" }],
+                                        "type": "input_source_if"
+                                    },
+                                    {
+                                        "identifiers": [{ "is_built_in_keyboard": true }],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": { "key_code": "left_command" },
+                                "to": [{ "select_input_source": { "input_source_id": "com.apple.keylayout.Dvorak" } }],
+                                "type": "basic"
+                            }
+                        ],
+                        "title": "Dynamic Keyboard Layout"
+                    }
+                ]
+            },
+            "name": "Default profile",
+            "selected": true,
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+        }
+    ]
+}

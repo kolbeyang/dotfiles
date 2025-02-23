@@ -10,8 +10,8 @@ vim.keymap.set({ 'x', 'n' }, '<leader>w', function()
 end, { desc = 'Save file', noremap = true, silent = true })
 
 -- up and down respecting line wrapping
-vim.api.nvim_set_keymap('n', 'j', 'gj', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'k', 'gk', { noremap = true, silent = true })
+vim.keymap.set({ 'n', 'v' }, 'j', 'gj', { noremap = true, silent = true })
+vim.keymap.set({ 'n', 'v' }, 'k', 'gk', { noremap = true, silent = true })
 
 -- delete single character without copying into register
 vim.keymap.set('n', 'x', '"_x', opts)
@@ -97,6 +97,9 @@ vim.keymap.set('n', '<leader>d', function()
     vim.diagnostic.goto_next()
   end
 end, { desc = '[D]iagnostics next', noremap = true, silent = true })
+
+-- Markdown export as PDF
+vim.api.nvim_set_keymap('n', '<leader>mp', ':!pandoc % -V geometry:margin=1in -o %:r.pdf<CR>', { noremap = true, silent = true })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which

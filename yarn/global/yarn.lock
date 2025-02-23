@@ -62,15 +62,20 @@ arg@^4.1.0:
   resolved "https://registry.yarnpkg.com/arg/-/arg-4.1.3.tgz#269fc7ad5b8e42cb63c896d5666017261c144089"
   integrity sha512-58S9QDqG0Xx27YwPSt9fJxivjYl432YCwfDMfZ+71RAqUrZef7LrKQZ3LHLOwCS4FLNBplP533Zx895SeOCHvA==
 
-create-next-app@^15.0.3:
-  version "15.0.3"
-  resolved "https://registry.yarnpkg.com/create-next-app/-/create-next-app-15.0.3.tgz#2c9b039277091b1e9fb4910f9c0dd54160af3af0"
-  integrity sha512-WJTW/JsnUxx62s0ldTf9DmT7249TheKoUNHd5MiNenxyC3NHKC5vTOGpO5DNkeDhW41da0PD1+9swUKXxXsC0Q==
+create-next-app@^15.1.0:
+  version "15.1.0"
+  resolved "https://registry.yarnpkg.com/create-next-app/-/create-next-app-15.1.0.tgz#0e82c295e7414175eb1c8553c55724182e827d8b"
+  integrity sha512-7joeLXiWq3idFLsHYTRwATtutmWHWmL38xNxnpkX+U8FFMuY1QtgmU8S7G/ZLlx7t07k9HWZ8g8Lf0njRhcvYA==
 
 create-require@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/create-require/-/create-require-1.1.1.tgz#c1d7e8f1e5f6cfc9ff65f9cd352d37348756c333"
   integrity sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==
+
+create-vite@^6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/create-vite/-/create-vite-6.2.0.tgz#67b123f62dd31149b3423b65f08a5aa9586db8da"
+  integrity sha512-4Y1kNZcr/X/JiMipV6tAc8l+4HAHlxomS57jJq2KdZJZV2csP6ne2/I2BQqFopvizq0lZT80e/MqmdP/KBxrIA==
 
 diff@^4.0.1:
   version "4.0.2"

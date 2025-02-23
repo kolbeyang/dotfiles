@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "create-next-app": "^15.0.3",
+    "create-next-app": "^15.1.0",
+    "create-vite": "^6.2.0",
     "pyright": "^1.1.355",
     "ts-node": "^10.9.2",
     "typescript-language-server": "^4.3.3"

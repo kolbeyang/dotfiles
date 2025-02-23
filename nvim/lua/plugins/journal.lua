@@ -1,3 +1,14 @@
+local function read_template(filepath)
+  local expanded_path = filepath:gsub('^~', os.getenv 'HOME') -- Expand ~ to /home/user
+  local file = io.open(expanded_path, 'r')
+  if not file then
+    return '# %A %B %d %Y\nTemplate not found at filepath' -- Fallback in case file is missing
+  end
+  local content = file:read '*a'
+  file:close()
+  return content
+end
+
 return {
   'jakobkhansen/journal.nvim',
   config = function()
@@ -11,7 +22,8 @@ return {
       journal = {
         -- Default configuration for `:Journal <date-modifier>`
         format = '%Y/%m-%B/daily/%d-%A',
-        template = '# %A %B %d %Y\n\n## What happened?\n-\n\n## ...',
+        -- template = '# %A %B %d %Y\n\n## What happened?\n-\n\n## Gratitude\n\n## ...',
+        template = read_template '~/.config/nvim/journal-day-template.md',
         -- template = '# %A %B %d %Y',
         frequency = { day = 1 },
 

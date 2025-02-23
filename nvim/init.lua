@@ -523,7 +523,7 @@ require('lazy').setup({
       local servers = {
         -- clangd = {},
         -- gopls = {},
-        -- pyright = {},
+        basedpyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -534,6 +534,7 @@ require('lazy').setup({
         -- ts_ls = {},
         tailwindcss = {},
         vtsls = {},
+        eslint = {},
         --
         lua_ls = {
           -- cmd = {...},
@@ -772,7 +773,6 @@ require('lazy').setup({
     --   vim.cmd.hi 'Comment gui=none'
     -- end,
   },
-
   {
     'rose-pine/neovim',
     name = 'rose-pine',
@@ -781,6 +781,20 @@ require('lazy').setup({
     --   vim.cmd.colorscheme 'rose-pine-moon'
     --   vim.cmd.hi 'Comment gui=none'
     -- end,
+  },
+  {
+    'folke/tokyonight.nvim',
+    name = 'tokyonight',
+    priority = 1000, -- Make sure to load this before all the other start plugins.
+    init = function()
+      -- Load the colorscheme here.
+      -- Like many other themes, this one has different styles, and you could load
+      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
+      vim.cmd.colorscheme 'tokyonight-storm'
+
+      -- You can configure highlights by doing something like:
+      vim.cmd.hi 'Comment gui=none'
+    end,
   },
   -- {
   --   'Yazeed1s/oh-lucy.nvim',
@@ -794,27 +808,27 @@ require('lazy').setup({
   {
     'gbprod/nord.nvim',
     name = 'nord',
-    priority = 1000, -- Make sure to load this before all the other start plugins.
-    init = function()
-      local nord_extended = require 'nord-extended'
-      local nord = require('nord.colors').palette
-      vim.cmd.colorscheme 'nord'
-      vim.api.nvim_set_hl(0, 'NormalFloat', { bg = nord_extended.polar_night.dark }) --
-      vim.api.nvim_set_hl(0, 'Float', { bg = nord_extended.polar_night.dark }) --
-      vim.api.nvim_set_hl(0, 'FloatBorder', { bg = nord_extended.polar_night.dark, fg = nord_extended.polar_night.dark }) --
-      vim.api.nvim_set_hl(0, 'TelescopeNormal', { bg = nord_extended.polar_night.dark }) --
-      vim.api.nvim_set_hl(0, 'TelescopeBorder', { bg = nord_extended.polar_night.dark, fg = nord_extended.polar_night.dark }) --
-      vim.api.nvim_set_hl(0, 'TelescopeBorder', { bg = nord_extended.polar_night.dark, fg = nord_extended.polar_night.dark }) --
-
-      vim.api.nvim_set_hl(0, 'TelescopePromptNormal', { bg = nord_extended.polar_night.dark }) --
-      vim.api.nvim_set_hl(0, 'TelescopePromptBorder', { bg = nord_extended.polar_night.dark, fg = nord.polar_night.light }) --
-      vim.api.nvim_set_hl(0, 'TelescopePromptTitle', { bg = nord_extended.polar_night.dark, fg = nord.polar_night.light }) --
-      vim.api.nvim_set_hl(0, 'TelescopeResultsTitle', { bg = nord_extended.polar_night.dark, fg = nord.polar_night.light }) --
-      vim.api.nvim_set_hl(0, 'TelescopePreviewTitle', { bg = nord_extended.polar_night.dark, fg = nord.polar_night.light }) --
-      -- vim.api.nvim_set_hl(0, 'TelescopePreviewNormal', { bg = nord_extended.polar_night.darker }) --
-      -- vim.api.nvim_set_hl(0, 'TelescopePreviewBorder', { bg = nord_extended.polar_night.darker, fg = nord_extended.polar_night.darker }) --
-      vim.cmd.hi 'Comment gui=none'
-    end,
+    -- priority = 1000, -- Make sure to load this before all the other start plugins.
+    -- init = function()
+    --   local nord_extended = require 'nord-extended'
+    --   local nord = require('nord.colors').palette
+    --   vim.cmd.colorscheme 'nord'
+    --   vim.api.nvim_set_hl(0, 'NormalFloat', { bg = nord_extended.polar_night.dark }) --
+    --   vim.api.nvim_set_hl(0, 'Float', { bg = nord_extended.polar_night.dark }) --
+    --   vim.api.nvim_set_hl(0, 'FloatBorder', { bg = nord_extended.polar_night.dark, fg = nord_extended.polar_night.dark }) --
+    --   vim.api.nvim_set_hl(0, 'TelescopeNormal', { bg = nord_extended.polar_night.dark }) --
+    --   vim.api.nvim_set_hl(0, 'TelescopeBorder', { bg = nord_extended.polar_night.dark, fg = nord_extended.polar_night.dark }) --
+    --   vim.api.nvim_set_hl(0, 'TelescopeBorder', { bg = nord_extended.polar_night.dark, fg = nord_extended.polar_night.dark }) --
+    --
+    --   vim.api.nvim_set_hl(0, 'TelescopePromptNormal', { bg = nord_extended.polar_night.dark }) --
+    --   vim.api.nvim_set_hl(0, 'TelescopePromptBorder', { bg = nord_extended.polar_night.dark, fg = nord.polar_night.light }) --
+    --   vim.api.nvim_set_hl(0, 'TelescopePromptTitle', { bg = nord_extended.polar_night.dark, fg = nord.polar_night.light }) --
+    --   vim.api.nvim_set_hl(0, 'TelescopeResultsTitle', { bg = nord_extended.polar_night.dark, fg = nord.polar_night.light }) --
+    --   vim.api.nvim_set_hl(0, 'TelescopePreviewTitle', { bg = nord_extended.polar_night.dark, fg = nord.polar_night.light }) --
+    --   -- vim.api.nvim_set_hl(0, 'TelescopePreviewNormal', { bg = nord_extended.polar_night.darker }) --
+    --   -- vim.api.nvim_set_hl(0, 'TelescopePreviewBorder', { bg = nord_extended.polar_night.darker, fg = nord_extended.polar_night.darker }) --
+    --   vim.cmd.hi 'Comment gui=none'
+    -- end,
   },
 
   -- Highlight todo, notes, etc in comments

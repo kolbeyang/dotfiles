@@ -29,19 +29,9 @@ return {
   'nvim-lualine/lualine.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function()
-    local function get_theme()
-      local current_theme = vim.g.colors_name
-      if current_theme == 'nord' then
-        return custom_nord
-      else
-        return 'auto' -- Fallback to auto theme
-      end
-    end
-
     require('lualine').setup {
       options = {
         icons_enabled = true,
-        -- theme = get_theme(),
         theme = 'auto',
         component_separators = { left = '│', right = '│' },
         section_separators = { left = '', right = '' },
@@ -62,7 +52,13 @@ return {
       sections = {
         -- lualine_a = { { 'branch', separator = { left = '' }, right_padding = 2 } },
         lualine_a = { { 'branch', separator = { right = '', left = '' }, right_padding = 2 } },
-        lualine_b = {},
+        lualine_b = {
+          {
+            'buffers',
+            mode = 1,
+            show_modified_status = true, -- Shows indicator when the buffer is modified.
+          },
+        },
         lualine_c = {
           'diagnostics',
           { 'filename', path = 1 },

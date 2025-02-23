@@ -119,3 +119,9 @@ export PATH="/Users/kolbeyang/.local/bin:$PATH"
 alias cd="z"
 
 eval $(thefuck --alias oops)
+
+# Set Neovim as my default editor
+export EDITOR=nvim
+
+# Anaconda
+echo 'export PATH="$HOME/anaconda3/bin:$PATH"' >> ~/.zshrc

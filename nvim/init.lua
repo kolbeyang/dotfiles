@@ -62,6 +62,10 @@ vim.opt.scrolloff = 5
 
 vim.diagnostic.config { virtual_text = false }
 
+-- Prevent Neovim from changing Kitty's terminal title
+vim.opt.titlestring = "%{fnamemodify(getcwd(), ':t')}"
+vim.opt.title = true
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
@@ -101,6 +105,15 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   group = vim.api.nvim_create_augroup('eslint-fixall-on-save', { clear = true }),
   callback = function()
     vim.cmd 'EslintFixAll'
+  end,
+})
+
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = { '*.py' },
+  desc = 'Black Format on Save',
+  group = vim.api.nvim_create_augroup('black-format-on-save', { clear = true }),
+  callback = function()
+    require('conform').format { async = true, lsp_fallback = true }
   end,
 })
 
@@ -523,7 +536,16 @@ require('lazy').setup({
       local servers = {
         -- clangd = {},
         -- gopls = {},
-        basedpyright = {},
+        basedpyright = {
+          settings = {
+            python = {
+              analysis = {
+                typeCheckingMode = 'basic',
+                reportArgumentType = 'warn',
+              },
+            },
+          },
+        },
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --

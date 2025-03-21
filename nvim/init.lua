@@ -538,10 +538,12 @@ require('lazy').setup({
         -- gopls = {},
         basedpyright = {
           settings = {
-            python = {
+            basedpyright = {
               analysis = {
+                useLibraryCodeForTypes = true,
                 typeCheckingMode = 'basic',
-                reportArgumentType = 'warn',
+                diagnosticMode = 'workspace',
+                autoSearchPath = true,
               },
             },
           },

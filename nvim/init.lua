@@ -305,6 +305,9 @@ require('lazy').setup({
         -- pickers = {}
         defaults = {
           path_display = { 'smart' }, -- This will shorten long paths intelligently
+          file_ignore_patterns = {
+            'node_modules',
+          },
         },
       }
 

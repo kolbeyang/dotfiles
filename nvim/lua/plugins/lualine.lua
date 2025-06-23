@@ -36,13 +36,14 @@ return {
         component_separators = { left = '│', right = '│' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = {
+          'Avante',
           statusline = {},
           winbar = {},
         },
         ignore_focus = {},
         always_divide_middle = true,
         always_show_tabline = true,
-        globalstatus = false,
+        globalstatus = true,
         refresh = {
           statusline = 100,
           tabline = 100,

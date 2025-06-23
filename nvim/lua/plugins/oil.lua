@@ -11,6 +11,7 @@ return {
       keymaps = {
         -- ["<C-c>" ] = "actions.close",
         ['q'] = 'actions.close',
+        ['gy'] = 'actions.yank_entry',
       },
       float = {
         -- Padding around the floating window
